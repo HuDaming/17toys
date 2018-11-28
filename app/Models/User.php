@@ -32,4 +32,9 @@ class User extends Authenticatable
         return $this->belongsToMany(Group::class)
             ->withPivot('level');
     }
+
+    public function topics()
+    {
+        return $this->hasMany(Topic::class);
+    }
 }
